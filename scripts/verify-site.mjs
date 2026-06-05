@@ -15,6 +15,14 @@ const badClaimPatterns = [
   /will be dispatched/i,
   /transmitted/i,
   /fully licensed/i,
+  /average\s+joplin\s+dispatch/i,
+  /(?:\d+|[<>]\s*\d+(?:\.\d+)?)\s*(?:mins?|hours?|hrs?)/i,
+  /\d+\s*crews?\b/i,
+  /automated dispatch/i,
+  /field unit assigned/i,
+  /will assign/i,
+  /fastest response/i,
+  /response times? under/i,
 ];
 const skipDirs = new Set(['.git', '.vercel', 'node_modules', 'dist']);
 function walk(dir) {

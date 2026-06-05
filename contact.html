@@ -91,7 +91,7 @@
           <span>DISPATCH ONLINE</span>
         </div>
         <h1 class="page-header-title">Diagnostic Sensor Handoff</h1>
-        <p class="page-header-desc">Input your location and system symptoms below. Our automated dispatch will assign a specialized field unit to your location within our 30-mile coverage radius.</p>
+        <p class="page-header-desc">Input a location and system symptoms below. This static demo shows an estimate-prep intake flow; it does not assign crews, transmit leads, or schedule service.</p>
       </div>
     </header>
 
@@ -99,8 +99,8 @@
       <div class="section-inner contact-wrapper">
         
         <div class="contact-form">
-          <h2 class="portal-title" style="font-size: var(--text-lg); margin-bottom: 24px;">Initialize Dispatch Protocol</h2>
-          <form onsubmit="event.preventDefault(); alert('Simulated dispatch initialized. Field unit assigned.');">
+          <h2 class="portal-title" style="font-size: var(--text-lg); margin-bottom: 24px;">Initialize Demo Intake</h2>
+          <form onsubmit="event.preventDefault(); alert('Demo intake staged locally. No service was scheduled.');">
             <div class="form-group">
               <label class="form-label">Property Address</label>
               <input type="text" class="form-input" placeholder="e.g. 123 Main St, Joplin, MO" required />
@@ -123,8 +123,8 @@
             <div class="form-group">
               <label class="form-label">Priority Level</label>
               <select class="form-input" required>
-                <option value="standard">Standard Scan (24-48 Hrs)</option>
-                <option value="urgent">Urgent Thermal Fault (Under 4 Hrs)</option>
+                <option value="standard">Standard Demo Intake</option>
+                <option value="urgent">Priority Symptom Demo</option>
               </select>
             </div>
             <button type="submit" class="btn btn-primary" style="width: 100%;">Transmit Coordinates</button>
@@ -132,7 +132,7 @@
         </div>
 
         <div class="sensor-handoff">
-          <h2 class="portal-title" style="font-size: var(--text-lg); border-bottom: 1px solid var(--color-border); padding-bottom: 16px;">Active Dispatch Grid</h2>
+          <h2 class="portal-title" style="font-size: var(--text-lg); border-bottom: 1px solid var(--color-border); padding-bottom: 16px;">Demo Intake Summary</h2>
           
           <div class="portal-stats-grid" style="grid-template-columns: 1fr; gap: 16px;">
             <div class="stat-box">
@@ -144,7 +144,7 @@
               <span class="stat-val">30 Miles</span>
             </div>
             <div class="stat-box">
-              <span class="stat-lbl">Dispatch Latency</span>
+              <span class="stat-lbl">Demo Area Status</span>
               <span class="stat-val" style="color: var(--color-green);">Demo Area</span>
             </div>
             <div class="stat-box">

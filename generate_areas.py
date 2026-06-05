@@ -43,7 +43,7 @@ areas_data = [
         "active_crews": "Sample Zone",
         "humidity": "80% RH",
         "meta_desc": "Attic load calibrations and duct seal integrity testing in Neosho, MO by Breeze & Burn. Evaporator flow analysis.",
-        "description": "Neosho serves as our southern service boundary. Our crews routinely perform thermal duct-leakage scans, humidifier integrations, and compressor capacitor diagnostics along this corridor."
+        "description": "Neosho serves as our southern service boundary. This demo page describes thermal duct-leakage scans, humidifier integrations, and compressor capacitor diagnostics along this corridor."
     },
     {
         "filename": "galena-ks.html",
@@ -186,7 +186,7 @@ html_template = """<!DOCTYPE html>
     <section class="section">
       <div class="section-inner" style="text-align: center;">
         <h2 class="portal-title" style="font-size: var(--text-xl); margin-bottom: 16px;">Schedule your {city_name} diagnostics scan</h2>
-        <p style="color: var(--color-muted); max-width: 600px; margin: 0 auto 32px; font-size: var(--text-sm);">Our engineering crews measure R-values, airflow drops, and static pressure splits. Optimize your home heating and cooling system today.</p>
+        <p style="color: var(--color-muted); max-width: 600px; margin: 0 auto 32px; font-size: var(--text-sm);">This demo copy models R-value, airflow-drop, and static-pressure split language. Optimize your home heating and cooling system today.</p>
         <a href="../index.html#book" class="btn btn-primary">Book {city_name} Service Scan</a>
       </div>
     </section>
