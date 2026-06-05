@@ -23,6 +23,9 @@ const badClaimPatterns = [
   /will assign/i,
   /fastest response/i,
   /response times? under/i,
+  /localized area dispatch/i,
+  /dispatch online/i,
+  /transmit/i,
 ];
 const skipDirs = new Set(['.git', '.vercel', 'node_modules', 'dist']);
 function walk(dir) {
