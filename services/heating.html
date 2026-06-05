@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Combustion diagnostics and heating systems maintenance in Joplin, MO by Breeze & Burn. Optimize AFUE heat exchangers." />
+  <title>Combustion Diagnostics & Heating — Breeze & Burn</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION RAIL -->
+  <header class="nav-container">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-brand">
+        <div class="brand-icon"></div>
+        <span>Breeze & Burn</span>
+      </a>
+      <div class="nav-menu">
+        <a href="../index.html#diagnostics" class="nav-link">Diagnostics</a>
+        <a href="../index.html#simulator" class="nav-link">Simulator</a>
+        <a href="../index.html#services" class="nav-link active">Services</a>
+        <a href="../index.html#areas" class="nav-link">Coverage</a>
+        <a href="../index.html#book" class="nav-link">Book Scan</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-status">
+          <div class="status-dot"></div>
+          <span>MONITORING HEAT</span>
+        </div>
+        <a href="../index.html#book" class="btn btn-primary" style="min-height: 38px; padding: 6px 16px; font-size: 11px; font-family: var(--font-mono); text-transform: uppercase;">Run Scan</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    
+    <!-- PAGE HERO -->
+    <header class="page-header-hero">
+      <div class="page-header-inner">
+        <div class="badge-outline" style="color: var(--color-heat); border-color: var(--color-heat-glow); background: oklch(70% 0.18 42 / 0.06);">
+          <span class="status-dot" style="background: var(--color-heat); box-shadow: 0 0 8px var(--color-heat);"></span>
+          <span>HEATING SYSTEM: MONITORED</span>
+        </div>
+        <h1 class="page-header-title">Combustion & Heating Diagnostics</h1>
+        <p class="page-header-desc">We calibrate burner draft velocity, analyze flue gas CO/O2 splits, and inspect internal heat exchangers to support safer operation and better fuel conversion during cold cycles.</p>
+      </div>
+    </header>
+
+    <!-- INTERACTIVE CALCULATOR SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="calculator-card">
+          <h2 class="portal-title" style="margin-bottom: 24px; font-size: var(--text-md); border-bottom: 1px solid var(--color-border); padding-bottom: 12px; color: var(--color-heat);">Furnace Efficiency Upgrade Assessor</h2>
+          
+          <div class="form-grid" style="margin-bottom: 24px;">
+            <div class="form-group">
+              <label for="annualBill">Annual Heating Cost ($)</label>
+              <input type="range" class="slider-input" id="annualBill" min="400" max="4000" step="50" value="1600" />
+              <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; margin-top: 4px;">
+                <span>Min: $400</span>
+                <span id="billVal" style="color: var(--color-text); font-weight: 600;">$1,600 / Year</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="currentEfficiency">Current Furnace Rating (AFUE)</label>
+              <select class="form-control" id="currentEfficiency" style="color: var(--color-text); background-color: oklch(8% 0.015 246); appearance: auto; -webkit-appearance: auto;">
+                <option value="65">65% AFUE (Old/Standard Gravity)</option>
+                <option value="70">70% AFUE (Mid-Range Aging Cast-Iron)</option>
+                <option value="80" selected>80% AFUE (Standard Forced-Air)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sim-results" style="background: oklch(100% 0 0 / 0.015); border: 1px solid var(--color-border);">
+            <div class="sim-metrics-grid" style="margin-bottom: 16px;">
+              <div class="sim-metric-card">
+                <span class="stat-lbl">Savings with 96% AFUE System</span>
+                <span class="val" id="savings96" style="color: var(--color-green);">$266 / Year</span>
+              </div>
+              <div class="sim-metric-card">
+                <span class="stat-lbl">10-Year Cumulative Savings</span>
+                <span class="val" id="savings10Year" style="color: var(--color-green);">$2,660 Saving</span>
+              </div>
+            </div>
+            
+            <div class="sim-diagnostic-status optimal" id="upgradeStatus" style="background: oklch(75% 0.15 142 / 0.06); border-color: oklch(75% 0.15 142 / 0.25);">
+              <span class="status-title" id="upgradeTitle">Upgrade Impact Score</span>
+              <span class="status-desc" id="upgradeDesc">Calculating your energy savings...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAILS DIRECTORY -->
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="section-inner">
+        <div class="services-grid">
+          
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon" style="color: var(--color-heat);">Heat Exchanger</span>
+            <h3 class="service-card-title">Carbon Monoxide Audits</h3>
+            <p class="service-card-desc">Even hairline fractures in furnace steel can vent carbon monoxide into indoor registers. We run physical pressure tests to ensure mechanical isolation.</p>
+          </div>
+
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon" style="color: var(--color-heat);">Burner Calibrations</span>
+            <h3 class="service-card-title">Combustion Tuning</h3>
+            <p class="service-card-desc">Soot buildup spikes fuel utility costs. We tune fuel valves and air shutters to maintain clean, soot-free combustion profiles.</p>
+          </div>
+
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon" style="color: var(--color-heat);">Duct Balance</span>
+            <h3 class="service-card-title">Static Airflow Analysis</h3>
+            <p class="service-card-desc">Weak furnace fans trigger high-limit switches and lock down systems. We test blower fan speeds against manufacturer static load lines.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK HOOK -->
+    <section class="section">
+      <div class="section-inner" style="text-align: center;">
+        <h2 class="portal-title" style="font-size: var(--text-xl); margin-bottom: 16px;">Schedule your seasonal heating scan</h2>
+        <p style="color: var(--color-muted); max-width: 600px; margin: 0 auto 32px; font-size: var(--text-sm);">Keep your system running efficiently, cleanly, and safely. Breeze & Burn engineers check structural gas pressure and thermal gradients across your vents.</p>
+        <a href="../index.html#book" class="btn btn-primary" style="background: linear-gradient(135deg, var(--color-text), oklch(75% 0.16 42));">Schedule Heating Diagnostics</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Breeze & Burn Systems. Technical contractor design concept.</span>
+        <div class="footer-legal">
+          <a href="../index.html">Back to Homepage</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const annualBillSlider = document.getElementById('annualBill');
+    const currentEfficiencySelect = document.getElementById('currentEfficiency');
+    
+    const billValText = document.getElementById('billVal');
+    const savings96Text = document.getElementById('savings96');
+    const savings10YearText = document.getElementById('savings10Year');
+    const upgradeDescText = document.getElementById('upgradeDesc');
+
+    function calculateSavings() {
+      const bill = parseFloat(annualBillSlider.value);
+      const curEff = parseFloat(currentEfficiencySelect.value) / 100;
+      
+      billValText.textContent = `$${bill.toLocaleString()} / Year`;
+
+      // Calculation logic
+      // Savings = Bill * (1 - CurrentEff / TargetEff)
+      const targetEff = 0.96;
+      const annualSavings = bill * (1 - (curEff / targetEff));
+      const cumulativeSavings = annualSavings * 10;
+
+      savings96Text.textContent = `$${Math.round(annualSavings)} / Year`;
+      savings10YearText.textContent = `$${Math.round(cumulativeSavings).toLocaleString()} Saving`;
+
+      // Update feedback text based on savings bracket
+      if (annualSavings > 350) {
+        upgradeDescText.textContent = `High Impact Upgrade: Replacing your legacy system will recover significant utility losses, saving around $${Math.round(annualSavings)} annually.`;
+      } else if (annualSavings > 150) {
+        upgradeDescText.textContent = `Moderate Savings: Replacing your furnace will yield steady efficiency gains, reducing your overall heating footprint.`;
+      } else {
+        upgradeDescText.textContent = `Standard Savings: Upgrading provides minor fuel savings, but delivers crucial reliability improvements.`;
+      }
+    }
+
+    annualBillSlider.addEventListener('input', calculateSavings);
+    currentEfficiencySelect.addEventListener('change', calculateSavings);
+
+    calculateSavings();
+  </script>
+</body>
+</html>

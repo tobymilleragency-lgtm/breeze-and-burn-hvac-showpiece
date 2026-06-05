@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AC Repair & cooling diagnostics by Breeze & Burn Systems. Expose cooling load drops and charge imbalances in Joplin, MO." />
+  <title>Cooling Diagnostics & AC Repair — Breeze & Burn</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION RAIL -->
+  <header class="nav-container">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-brand">
+        <div class="brand-icon"></div>
+        <span>Breeze & Burn</span>
+      </a>
+      <div class="nav-menu">
+        <a href="../index.html#diagnostics" class="nav-link">Diagnostics</a>
+        <a href="../index.html#simulator" class="nav-link">Simulator</a>
+        <a href="../index.html#services" class="nav-link active">Services</a>
+        <a href="../index.html#areas" class="nav-link">Coverage</a>
+        <a href="../index.html#book" class="nav-link">Book Scan</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-status">
+          <div class="status-dot"></div>
+          <span>MONITORING AC</span>
+        </div>
+        <a href="../index.html#book" class="btn btn-primary" style="min-height: 38px; padding: 6px 16px; font-size: 11px; font-family: var(--font-mono); text-transform: uppercase;">Run Scan</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    
+    <!-- PAGE HERO -->
+    <header class="page-header-hero">
+      <div class="page-header-inner">
+        <div class="badge-outline">
+          <span class="status-dot" style="background: var(--color-cold); box-shadow: 0 0 8px var(--color-cold);"></span>
+          <span>SYSTEM STATE: STABLE</span>
+        </div>
+        <h1 class="page-header-title">Air Conditioning & Cooling Intelligence</h1>
+        <p class="page-header-desc">Analyzing cooling load curves, evaporator saturation, and heat expulsion capacity. Our diagnostics expose weak charges and thermal blocks before they lead to compressor failures.</p>
+      </div>
+    </header>
+
+    <!-- INTERACTIVE CALCULATOR SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="calculator-card">
+          <h2 class="portal-title" style="margin-bottom: 24px; font-size: var(--text-md); border-bottom: 1px solid var(--color-border); padding-bottom: 12px;">Delta-T Temperature Split Diagnostics</h2>
+          
+          <div class="form-grid" style="margin-bottom: 24px;">
+            <div class="form-group">
+              <label for="returnTemp">Return Air Temp (Home Intake)</label>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <input type="number" class="form-control" id="returnTemp" value="75" min="60" max="95" />
+                <span style="font-family: var(--font-mono); font-weight: 500;">°F</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="supplyTemp">Supply Air Temp (Register Vent)</label>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <input type="number" class="form-control" id="supplyTemp" value="57" min="40" max="80" />
+                <span style="font-family: var(--font-mono); font-weight: 500;">°F</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-results" style="background: oklch(100% 0 0 / 0.015); border: 1px solid var(--color-border);">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border); padding-bottom: 12px; margin-bottom: 12px;">
+              <span class="stat-lbl">Calculated Temperature Split</span>
+              <span id="deltaValue" style="font-family: var(--font-mono); font-size: var(--text-lg); font-weight: 700; color: var(--color-cold);">18.0°F</span>
+            </div>
+            
+            <div class="sim-diagnostic-status optimal" id="splitStatus">
+              <span class="status-title" id="splitTitle">Optimal Temperature Split</span>
+              <span class="status-desc" id="splitDesc">A split between 16°F and 22°F shows optimal evaporator coil transfer rate and balanced duct velocities.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT DETAILS GRID -->
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="section-inner">
+        <div class="services-grid">
+          
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon">Diagnostic Scope</span>
+            <h3 class="service-card-title">Refrigerant Verification</h3>
+            <p class="service-card-desc">Low refrigerant charges degrade compressor lifespan and spike energy use. We measure superheat and subcooling curves directly to find microscopic leaks.</p>
+          </div>
+
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon">Airflow Balance</span>
+            <h3 class="service-card-title">Evaporator Coil Scanning</h3>
+            <p class="service-card-desc">Dust blankets on evaporator coils act as insulation, choking heat transfer. We inspect internal coil matrices using microscopic fiber-scopes.</p>
+          </div>
+
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon">Electrical Diagnostics</span>
+            <h3 class="service-card-title">Capacitor & Draw Audits</h3>
+            <p class="service-card-desc">We test starting capacitor capacitance levels and compressor running amperage draw to anticipate and prevent electrical lockups during high-heat spells.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK SCAN SECTION LINK -->
+    <section class="section">
+      <div class="section-inner" style="text-align: center;">
+        <h2 class="portal-title" style="font-size: var(--text-xl); margin-bottom: 16px;">Ready to schedule a thermal diagnostic scan?</h2>
+        <p style="color: var(--color-muted); max-width: 600px; margin: 0 auto 32px; font-size: var(--text-sm);">Our specialized engineering crews map Joplin residential structures with diagnostic precision. Get a definitive thermal health score for your home climate systems.</p>
+        <a href="../index.html#book" class="btn btn-primary">Schedule Cooling Scan Now</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Breeze & Burn Systems. Technical contractor design concept.</span>
+        <div class="footer-legal">
+          <a href="../index.html">Back to Homepage</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const returnTempInput = document.getElementById('returnTemp');
+    const supplyTempInput = document.getElementById('supplyTemp');
+    const deltaValueText = document.getElementById('deltaValue');
+    const splitStatusDiv = document.getElementById('splitStatus');
+    const splitTitleSpan = document.getElementById('splitTitle');
+    const splitDescSpan = document.getElementById('splitDesc');
+
+    function calculateSplit() {
+      const returnT = parseFloat(returnTempInput.value);
+      const supplyT = parseFloat(supplyTempInput.value);
+      const split = returnT - supplyT;
+
+      deltaValueText.textContent = `${split.toFixed(1)}°F`;
+
+      splitStatusDiv.className = 'sim-diagnostic-status'; // reset
+
+      if (isNaN(split) || split <= 0) {
+        splitStatusDiv.classList.add('alert');
+        splitTitleSpan.textContent = 'Invalid Telemetry Input';
+        splitDescSpan.textContent = 'Return air temperature must exceed supply air temperature to calculate cooling performance.';
+        deltaValueText.style.color = 'var(--color-heat)';
+      } else if (split >= 16 && split <= 22) {
+        splitStatusDiv.classList.add('optimal');
+        splitTitleSpan.textContent = 'Optimal Temperature Split';
+        splitDescSpan.textContent = 'Your AC cooling system is pulling heat out of the air at peak mechanical efficiency (16°F to 22°F split).';
+        deltaValueText.style.color = 'var(--color-green)';
+      } else if (split < 16) {
+        splitStatusDiv.classList.add('warning');
+        splitTitleSpan.textContent = 'Low Temperature Split';
+        splitDescSpan.textContent = 'A split below 16°F indicates potential issues: low refrigerant charge, dirty coils, or severe return air bypass leaks.';
+        deltaValueText.style.color = 'var(--color-amber)';
+      } else {
+        splitStatusDiv.classList.add('alert');
+        splitTitleSpan.textContent = 'High Temperature Split (Airflow Restricted)';
+        splitDescSpan.textContent = 'A split over 22°F indicates restricted airflow: dirty air filters, crushed ducts, or incorrect blower fan speeds.';
+        deltaValueText.style.color = 'var(--color-heat)';
+      }
+    }
+
+    [returnTempInput, supplyTempInput].forEach(input => {
+      input.addEventListener('input', calculateSplit);
+    });
+
+    calculateSplit();
+  </script>
+</body>
+</html>

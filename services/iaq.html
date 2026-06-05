@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Indoor air quality diagnostics and filtration calibration in Joplin, MO by Breeze & Burn. Optimize HEPA purification." />
+  <title>Air Purification & IAQ — Breeze & Burn</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION RAIL -->
+  <header class="nav-container">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-brand">
+        <div class="brand-icon"></div>
+        <span>Breeze & Burn</span>
+      </a>
+      <div class="nav-menu">
+        <a href="../index.html#diagnostics" class="nav-link">Diagnostics</a>
+        <a href="../index.html#simulator" class="nav-link">Simulator</a>
+        <a href="../index.html#services" class="nav-link active">Services</a>
+        <a href="../index.html#areas" class="nav-link">Coverage</a>
+        <a href="../index.html#book" class="nav-link">Book Scan</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-status">
+          <div class="status-dot"></div>
+          <span>MONITORING IAQ</span>
+        </div>
+        <a href="../index.html#book" class="btn btn-primary" style="min-height: 38px; padding: 6px 16px; font-size: 11px; font-family: var(--font-mono); text-transform: uppercase;">Run Scan</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    
+    <!-- PAGE HERO -->
+    <header class="page-header-hero">
+      <div class="page-header-inner">
+        <div class="badge-outline" style="color: var(--color-iaq); border-color: var(--color-iaq-glow); background: oklch(74% 0.14 165 / 0.06);">
+          <span class="status-dot" style="background: var(--color-iaq); box-shadow: 0 0 8px var(--color-iaq);"></span>
+          <span>AIR QUALITY: MONITORED</span>
+        </div>
+        <h1 class="page-header-title">Indoor Air Purification & IAQ</h1>
+        <p class="page-header-desc">We diagnose micro-particulate counts, optimize relative humidity levels, and integrate active UV-C sterilizers to ensure clean air flows through your home.</p>
+      </div>
+    </header>
+
+    <!-- INTERACTIVE CALCULATOR SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="calculator-card">
+          <h2 class="portal-title" style="margin-bottom: 24px; font-size: var(--text-md); border-bottom: 1px solid var(--color-border); padding-bottom: 12px; color: var(--color-iaq);">Particulate Capture Simulator</h2>
+          
+          <div class="form-group" style="margin-bottom: 28px;">
+            <label for="filterGrade">Filter Filtration Rating</label>
+            <select class="form-control" id="filterGrade" style="color: var(--color-text); background-color: oklch(8% 0.015 246); appearance: auto; -webkit-appearance: auto;">
+              <option value="merv8">MERV 8 (Basic Pleated Filter)</option>
+              <option value="merv11">MERV 11 (Standard Residential Upgrade)</option>
+              <option value="merv13" selected>MERV 13 (High-Efficiency Smart Filter)</option>
+              <option value="hepa">HEPA 99.97% (True Medical Grade Bypass)</option>
+            </select>
+          </div>
+
+          <div class="sim-results" style="background: oklch(100% 0 0 / 0.015); border: 1px solid var(--color-border); gap: 16px;">
+            <div class="results-header" style="border-bottom: 0; padding-bottom: 0;">Captured Efficiency Ratings</div>
+            
+            <!-- Dust & Pollen -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; margin-bottom: 6px;">
+                <span>Dust, Pollen & Large Allergens</span>
+                <span id="ratePollen" style="font-weight: 600;">85% Captured</span>
+              </div>
+              <div style="height: 8px; border-radius: 4px; background: oklch(100% 0 0 / 0.08); overflow: hidden;">
+                <div id="barPollen" style="height: 100%; width: 85%; background: var(--color-iaq); border-radius: 4px; transition: width 0.3s;"></div>
+              </div>
+            </div>
+
+            <!-- Mold & Dander -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; margin-bottom: 6px;">
+                <span>Mold Spores & Pet Dander</span>
+                <span id="rateDander" style="font-weight: 600;">70% Captured</span>
+              </div>
+              <div style="height: 8px; border-radius: 4px; background: oklch(100% 0 0 / 0.08); overflow: hidden;">
+                <div id="barDander" style="height: 100%; width: 70%; background: var(--color-iaq); border-radius: 4px; transition: width 0.3s;"></div>
+              </div>
+            </div>
+
+            <!-- Smokes & Fine Dust -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; margin-bottom: 6px;">
+                <span>Smoke Particles & Fine Dust</span>
+                <span id="rateSmoke" style="font-weight: 600;">50% Captured</span>
+              </div>
+              <div style="height: 8px; border-radius: 4px; background: oklch(100% 0 0 / 0.08); overflow: hidden;">
+                <div id="barSmoke" style="height: 100%; width: 50%; background: var(--color-iaq); border-radius: 4px; transition: width 0.3s;"></div>
+              </div>
+            </div>
+
+            <!-- Viruses & Ultrafine particles -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; margin-bottom: 6px;">
+                <span>Viruses & Ultrafine Particulates</span>
+                <span id="rateVirus" style="font-weight: 600;">15% Captured</span>
+              </div>
+              <div style="height: 8px; border-radius: 4px; background: oklch(100% 0 0 / 0.08); overflow: hidden;">
+                <div id="barVirus" style="height: 100%; width: 15%; background: var(--color-iaq); border-radius: 4px; transition: width 0.3s;"></div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT METRIC CARDS -->
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="section-inner">
+        <div class="services-grid">
+          
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon" style="color: var(--color-iaq);">Particulate Counts</span>
+            <h3 class="service-card-title">Micro-laser Scanning</h3>
+            <p class="service-card-desc">We use digital laser particulate counters to inventory millions of microscopic mold, skin cell, and dust mites swirling in your air ducts.</p>
+          </div>
+
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon" style="color: var(--color-iaq);">Pathogen Isolation</span>
+            <h3 class="service-card-title">UV-C Air Sanitization</h3>
+            <p class="service-card-desc">Static filters cannot catch active biological pathogens. We position specialized UV-C spectrum arrays directly inside return air plenums to neutralize bacteria.</p>
+          </div>
+
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon" style="color: var(--color-iaq);">Humidity Diagnostics</span>
+            <h3 class="service-card-title">Relativity Calibration</h3>
+            <p class="service-card-desc">Humidities over 60% generate mold colonies, while humidities under 30% degrade your nasal lining. We integrate whole-house humidifier controls.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="section">
+      <div class="section-inner" style="text-align: center;">
+        <h2 class="portal-title" style="font-size: var(--text-xl); margin-bottom: 16px;">Schedule your particulate scanner sweep</h2>
+        <p style="color: var(--color-muted); max-width: 600px; margin: 0 auto 32px; font-size: var(--text-sm);">Our engineering crews measure micro-leakages and particle loads. Take total control over the air flowing through your home today.</p>
+        <a href="../index.html#book" class="btn btn-primary" style="background: linear-gradient(135deg, var(--color-text), oklch(75% 0.16 165));">Schedule IAQ Diagnostics</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Breeze & Burn Systems. Technical contractor design concept.</span>
+        <div class="footer-legal">
+          <a href="../index.html">Back to Homepage</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const filterGradeSelect = document.getElementById('filterGrade');
+    
+    // Performance Matrix
+    const ratings = {
+      merv8: { pollen: 70, dander: 45, smoke: 15, virus: 5 },
+      merv11: { pollen: 85, dander: 70, smoke: 40, virus: 15 },
+      merv13: { pollen: 92, dander: 85, smoke: 65, virus: 30 },
+      hepa: { pollen: 100, dander: 99.9, smoke: 99.0, virus: 99.97 }
+    };
+
+    function updateSimulation() {
+      const selected = filterGradeSelect.value;
+      const data = ratings[selected];
+
+      const elements = ['Pollen', 'Dander', 'Smoke', 'Virus'];
+      elements.forEach(el => {
+        const key = el.toLowerCase();
+        const score = data[key];
+        
+        const rateText = document.getElementById(`rate${el}`);
+        const barDiv = document.getElementById(`bar${el}`);
+
+        rateText.textContent = `${score}% Captured`;
+        barDiv.style.width = `${score}%`;
+
+        // Style HEPA differently
+        if (selected === 'hepa') {
+          barDiv.style.background = 'var(--color-green)';
+        } else {
+          barDiv.style.background = 'var(--color-iaq)';
+        }
+      });
+    }
+
+    filterGradeSelect.addEventListener('change', updateSimulation);
+    updateSimulation();
+  </script>
+</body>
+</html>

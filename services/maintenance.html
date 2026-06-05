@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HVAC maintenance and seasonal tuning in Joplin, MO by Breeze & Burn. Optimize capacitor, coil, and static balance." />
+  <title>System Tuning & Maintenance — Breeze & Burn</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    /* Inline helper for checklist styling */
+    .checklist-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: var(--text-sm);
+    }
+    .checklist-table th, .checklist-table td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .checklist-table th {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--color-faint);
+    }
+    .checkbox-cell {
+      text-align: center;
+      width: 60px;
+    }
+    .check-btn {
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      border: 1px solid var(--color-border);
+      background: oklch(8% 0.015 246);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: transparent;
+      transition: all var(--dur-fast);
+    }
+    .check-btn.checked {
+      background: var(--color-green-glow);
+      border-color: var(--color-green);
+      color: var(--color-green);
+    }
+    .check-row.checked-row td {
+      color: var(--color-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION RAIL -->
+  <header class="nav-container">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-brand">
+        <div class="brand-icon"></div>
+        <span>Breeze & Burn</span>
+      </a>
+      <div class="nav-menu">
+        <a href="../index.html#diagnostics" class="nav-link">Diagnostics</a>
+        <a href="../index.html#simulator" class="nav-link">Simulator</a>
+        <a href="../index.html#services" class="nav-link active">Services</a>
+        <a href="../index.html#areas" class="nav-link">Coverage</a>
+        <a href="../index.html#book" class="nav-link">Book Scan</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-status">
+          <div class="status-dot"></div>
+          <span>MAINTENANCE RAIL</span>
+        </div>
+        <a href="../index.html#book" class="btn btn-primary" style="min-height: 38px; padding: 6px 16px; font-size: 11px; font-family: var(--font-mono); text-transform: uppercase;">Run Scan</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    
+    <!-- PAGE HERO -->
+    <header class="page-header-hero">
+      <div class="page-header-inner">
+        <div class="badge-outline" style="color: var(--color-green); border-color: var(--color-green-glow); background: oklch(75% 0.15 142 / 0.06);">
+          <span class="status-dot" style="background: var(--color-green); box-shadow: 0 0 8px var(--color-green);"></span>
+          <span>CALIBRATION PROTOCOL: ARMED</span>
+        </div>
+        <h1 class="page-header-title">Seasonal System Calibration & Maintenance</h1>
+        <p class="page-header-desc">Regular calibration stops breakdown loops before they start. Our comprehensive check-sheet audits starting amp spikes, subcooling pressures, and flue exhaust integrity.</p>
+      </div>
+    </header>
+
+    <!-- CHECKLIST WIDGET SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="calculator-card" style="max-width: 900px;">
+          
+          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid var(--color-border); padding-bottom: 16px; margin-bottom: 16px;">
+            <div>
+              <h2 class="portal-title" style="font-size: var(--text-md); color: var(--color-green);">Tuning Checklist Manifest</h2>
+              <p style="font-size: 11px; color: var(--color-faint); margin-top: 2px;">Simulate checking off maintenance inspection points</p>
+            </div>
+            <div style="display: flex; align-items: baseline; gap: 8px;">
+              <span class="stat-lbl" style="font-size: 10px;">Calibration Score</span>
+              <span id="completionScore" style="font-family: var(--font-mono); font-size: var(--text-xl); font-weight: 700; color: var(--color-green);">0%</span>
+            </div>
+          </div>
+
+          <table class="checklist-table">
+            <thead>
+              <tr>
+                <th class="checkbox-cell">Verify</th>
+                <th>Diagnostic Inspection Point</th>
+                <th>Target Specification Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- item 1 -->
+              <tr class="check-row" id="row1">
+                <td class="checkbox-cell">
+                  <button class="check-btn" data-index="1" aria-label="Toggle Checkpoint 1">✓</button>
+                </td>
+                <td><strong>Electrical Draw & Capacitance</strong><br><span style="font-size:11px; color:var(--color-faint)">Starting capacitor measured capacitance audit.</span></td>
+                <td style="font-family: var(--font-mono); font-size: 12px;">Within 5% of manufacturer MFD rating</td>
+              </tr>
+              <!-- item 2 -->
+              <tr class="check-row" id="row2">
+                <td class="checkbox-cell">
+                  <button class="check-btn" data-index="2" aria-label="Toggle Checkpoint 2">✓</button>
+                </td>
+                <td><strong>Refrigerant Saturation Subcooling</strong><br><span style="font-size:11px; color:var(--color-faint)">Liquid line subcooling temp checking.</span></td>
+                <td style="font-family: var(--font-mono); font-size: 12px;">8.0°F to 12.0°F (TxV system)</td>
+              </tr>
+              <!-- item 3 -->
+              <tr class="check-row" id="row3">
+                <td class="checkbox-cell">
+                  <button class="check-btn" data-index="3" aria-label="Toggle Checkpoint 3">✓</button>
+                </td>
+                <td><strong>Combustion Carbon Monoxide Split</strong><br><span style="font-size:11px; color:var(--color-faint)">Flue exhaust flue-gas carbon monoxide levels.</span></td>
+                <td style="font-family: var(--font-mono); font-size: 12px;">&lt; 100 PPM air-free</td>
+              </tr>
+              <!-- item 4 -->
+              <tr class="check-row" id="row4">
+                <td class="checkbox-cell">
+                  <button class="check-btn" data-index="4" aria-label="Toggle Checkpoint 4">✓</button>
+                </td>
+                <td><strong>Evaporator Delta-T Balance</strong><br><span style="font-size:11px; color:var(--color-faint)">Return-to-supply airflow temp differential.</span></td>
+                <td style="font-family: var(--font-mono); font-size: 12px;">16.0°F to 22.0°F split</td>
+              </tr>
+              <!-- item 5 -->
+              <tr class="check-row" id="row5">
+                <td class="checkbox-cell">
+                  <button class="check-btn" data-index="5" aria-label="Toggle Checkpoint 5">✓</button>
+                </td>
+                <td><strong>Duct Static Pressure Curve</strong><br><span style="font-size:11px; color:var(--color-faint)">External pressure drop check across blower fan.</span></td>
+                <td style="font-family: var(--font-mono); font-size: 12px;">&lt; 0.50 in. w.c. total static drop</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="sim-diagnostic-status warning" id="checklistBanner" style="margin-top: 24px; background: oklch(100% 0 0 / 0.02); border-color: var(--color-border);">
+            <span class="status-title" id="checklistBannerTitle">Verification Outstanding</span>
+            <span class="status-desc" id="checklistBannerDesc">Confirming structural calibration metrics. Select checkboxes to verify inspection points.</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT SECTIONS -->
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="section-inner">
+        <div class="services-grid">
+          
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon" style="color: var(--color-green);">Step 1</span>
+            <h3 class="service-card-title">Chemical Coil Cleaning</h3>
+            <p class="service-card-desc">Outdoor condensers gather pollen, grass, and dirt. We use specialized foaming solutions to clean fins and maximize heat expulsion speeds.</p>
+          </div>
+
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon" style="color: var(--color-green);">Step 2</span>
+            <h3 class="service-card-title">Lubrication & Fan Tuning</h3>
+            <p class="service-card-desc">Friction overloads electric fan motors, leading to heat failures. We oil bearing assemblies and verify blower wheel balance grids.</p>
+          </div>
+
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon" style="color: var(--color-green);">Step 3</span>
+            <h3 class="service-card-title">Safety Exchanger Scan</h3>
+            <p class="service-card-desc">We double-check safety valves, thermocouple switches, and flue venting piping to check for exhaust-leak warning signs before the system is used hard.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK SCAN LINK -->
+    <section class="section">
+      <div class="section-inner" style="text-align: center;">
+        <h2 class="portal-title" style="font-size: var(--text-xl); margin-bottom: 16px;">Schedule your mechanical calibration scan</h2>
+        <p style="color: var(--color-muted); max-width: 600px; margin: 0 auto 32px; font-size: var(--text-sm);">Prepare clean airflow, balanced electrical draw, and furnace gas manifold checks. This demo does not issue live certification cards.</p>
+        <a href="../index.html#book" class="btn btn-primary" style="background: linear-gradient(135deg, var(--color-text), oklch(75% 0.15 142));">Schedule System Tuning Scan</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Breeze & Burn Systems. Technical contractor design concept.</span>
+        <div class="footer-legal">
+          <a href="../index.html">Back to Homepage</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const checkBtns = document.querySelectorAll('.check-btn');
+    const completionScoreSpan = document.getElementById('completionScore');
+    const checklistBannerDiv = document.getElementById('checklistBanner');
+    const checklistBannerTitle = document.getElementById('checklistBannerTitle');
+    const checklistBannerDesc = document.getElementById('checklistBannerDesc');
+
+    let checksState = { 1: false, 2: false, 3: false, 4: false, 5: false };
+
+    checkBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const index = btn.dataset.index;
+        const row = document.getElementById(`row${index}`);
+        
+        checksState[index] = !checksState[index];
+
+        if (checksState[index]) {
+          btn.classList.add('checked');
+          row.classList.add('checked-row');
+        } else {
+          btn.classList.remove('checked');
+          row.classList.remove('checked-row');
+        }
+
+        updateScore();
+      });
+    });
+
+    function updateScore() {
+      const verifiedCount = Object.values(checksState).filter(val => val === true).length;
+      const total = Object.keys(checksState).length;
+      const percentage = Math.round((verifiedCount / total) * 100);
+
+      completionScoreSpan.textContent = `${percentage}%`;
+
+      checklistBannerDiv.className = 'sim-diagnostic-status'; // reset
+
+      if (percentage === 100) {
+        checklistBannerDiv.classList.add('optimal');
+        checklistBannerTitle.textContent = 'Demo Calibration Checklist Complete';
+        checklistBannerDesc.textContent = 'All demo checklist items are marked complete. A real technician inspection would be required before claiming safety or efficiency.';
+        completionScoreSpan.style.color = 'var(--color-green)';
+      } else if (verifiedCount > 0) {
+        checklistBannerDiv.classList.add('warning');
+        checklistBannerTitle.textContent = 'Audit In-Progress';
+        checklistBannerDesc.textContent = `Completed ${verifiedCount} of ${total} safety and tuning checkpoints. Please finish checking points.`;
+        completionScoreSpan.style.color = 'var(--color-amber)';
+      } else {
+        checklistBannerDiv.classList.add('warning');
+        checklistBannerTitle.textContent = 'Verification Outstanding';
+        checklistBannerDesc.textContent = 'Confirming structural calibration metrics. Select checkboxes to verify inspection points.';
+        completionScoreSpan.style.color = 'var(--color-muted)';
+      }
+    }
+  </script>
+</body>
+</html>

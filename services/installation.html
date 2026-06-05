@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Precision system replacement and Manual J load calculations in Joplin, MO by Breeze & Burn. Optimize HVAC sizing." />
+  <title>Precision Replacement & Load Design — Breeze & Burn</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION RAIL -->
+  <header class="nav-container">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-brand">
+        <div class="brand-icon"></div>
+        <span>Breeze & Burn</span>
+      </a>
+      <div class="nav-menu">
+        <a href="../index.html#diagnostics" class="nav-link">Diagnostics</a>
+        <a href="../index.html#simulator" class="nav-link">Simulator</a>
+        <a href="../index.html#services" class="nav-link active">Services</a>
+        <a href="../index.html#areas" class="nav-link">Coverage</a>
+        <a href="../index.html#book" class="nav-link">Book Scan</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-status">
+          <div class="status-dot"></div>
+          <span>LOAD COMMISSIONING</span>
+        </div>
+        <a href="../index.html#book" class="btn btn-primary" style="min-height: 38px; padding: 6px 16px; font-size: 11px; font-family: var(--font-mono); text-transform: uppercase;">Run Scan</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    
+    <!-- PAGE HERO -->
+    <header class="page-header-hero">
+      <div class="page-header-inner">
+        <div class="badge-outline">
+          <span class="status-dot" style="background: var(--color-cold); box-shadow: 0 0 8px var(--color-cold);"></span>
+          <span>REPLACEMENT AUDIT: ACTIVE</span>
+        </div>
+        <h1 class="page-header-title">Precision Replacement & System Design</h1>
+        <p class="page-header-desc">Oversized units cycle rapidly and freeze coils, while undersized units run constantly. We calculate true Manual J structural thermal loads to size your equipment to the pixel.</p>
+      </div>
+    </header>
+
+    <!-- INTERACTIVE CALCULATOR SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="calculator-card">
+          <h2 class="portal-title" style="margin-bottom: 24px; font-size: var(--text-md); border-bottom: 1px solid var(--color-border); padding-bottom: 12px;">Heat Load Tonnage Sizing Estimator</h2>
+          
+          <div class="form-grid" style="margin-bottom: 24px;">
+            <div class="form-group">
+              <label for="houseSize">House Size (Square Feet)</label>
+              <input type="range" class="slider-input" id="houseSize" min="800" max="4000" step="100" value="1800" />
+              <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; margin-top: 4px;">
+                <span>800 sq ft</span>
+                <span id="sizeVal" style="color: var(--color-text); font-weight: 600;">1,800 sq ft</span>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="wallInsulation">Wall Insulation Quality</label>
+              <select class="form-control" id="wallInsulation" style="color: var(--color-text); background-color: oklch(8% 0.015 246); appearance: auto; -webkit-appearance: auto;">
+                <option value="1.3">Poor (No insulation, wood lath)</option>
+                <option value="1.0" selected>Standard (R-11 to R-13 fiberglass batts)</option>
+                <option value="0.75">Premium (R-19 to R-21 dense-packed/foam)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="windowExposure">Window Integrity</label>
+              <select class="form-control" id="windowExposure" style="color: var(--color-text); background-color: oklch(8% 0.015 246); appearance: auto; -webkit-appearance: auto;">
+                <option value="1.2">Single Pane (High leakage/drafts)</option>
+                <option value="1.0" selected>Double Pane Standard (Standard glass)</option>
+                <option value="0.8">Energy Star Low-E (Double pane coated)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sim-results" style="background: oklch(100% 0 0 / 0.015); border: 1px solid var(--color-border);">
+            <div class="sim-metrics-grid" style="margin-bottom: 16px;">
+              <div class="sim-metric-card">
+                <span class="stat-lbl">Required Air Conditioning</span>
+                <span class="val" id="calcTons" style="color: var(--color-cold);">3.0 Tons</span>
+              </div>
+              <div class="sim-metric-card">
+                <span class="stat-lbl">Target Airflow Velocity</span>
+                <span class="val" id="calcCfm" style="color: var(--color-text);">1,200 CFM</span>
+              </div>
+            </div>
+            
+            <div class="sim-diagnostic-status optimal" id="sizingStatus">
+              <span class="status-title" id="sizingTitle">Load Diagnosis</span>
+              <span class="status-desc" id="sizingDesc">Calculating parameters...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS DESCRIPTION METRIC CARDS -->
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="section-inner">
+        <div class="services-grid">
+          
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon">Engineering standard</span>
+            <h3 class="service-card-title">Manual J Calculation</h3>
+            <p class="service-card-desc">We model structural glass exposure, wall R-values, floor structures, ceiling solar radiation, and local weather patterns to compute correct load profiles.</p>
+          </div>
+
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon">Duct Sizing</span>
+            <h3 class="service-card-title">Manual D Engineering</h3>
+            <p class="service-card-desc">Hooking a 4-ton unit to a 2-ton duct system chokes compressors and sky-rockets noise. We design trunk sizing splits and return grills to balance flow.</p>
+          </div>
+
+          <div class="service-card" style="padding: 24px;">
+            <span class="service-icon">Efficiency upgrades</span>
+            <h3 class="service-card-title">Inverter Load Tuning</h3>
+            <p class="service-card-desc">Modern variable-capacity inverter compressors scale their output down to 25% capacity, matching structural loads perfectly and eliminating temperature swings.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK CTA -->
+    <section class="section">
+      <div class="section-inner" style="text-align: center;">
+        <h2 class="portal-title" style="font-size: var(--text-xl); margin-bottom: 16px;">Schedule your replacement engineering audit</h2>
+        <p style="color: var(--color-muted); max-width: 600px; margin: 0 auto 32px; font-size: var(--text-sm);">Our engineering crews map structural thermal signatures. Stop guessing. Size your system to the exact BTUs required.</p>
+        <a href="../index.html#book" class="btn btn-primary">Schedule Installation Load Audit</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Breeze & Burn Systems. Technical contractor design concept.</span>
+        <div class="footer-legal">
+          <a href="../index.html">Back to Homepage</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const sizeSlider = document.getElementById('houseSize');
+    const insulationSelect = document.getElementById('wallInsulation');
+    const windowsSelect = document.getElementById('windowExposure');
+
+    const sizeValSpan = document.getElementById('sizeVal');
+    const calcTonsText = document.getElementById('calcTons');
+    const calcCfmText = document.getElementById('calcCfm');
+    const sizingDescText = document.getElementById('sizingDesc');
+
+    function calculateTonnage() {
+      const sqFt = parseFloat(sizeSlider.value);
+      const insulMultiplier = parseFloat(insulationSelect.value);
+      const windowMultiplier = parseFloat(windowsSelect.value);
+
+      sizeValSpan.textContent = `${sqFt.toLocaleString()} sq ft`;
+
+      // Simplified Manual J calculation
+      // Base load: 1 Ton (12,000 BTU) per 600 sq ft
+      // Modifiers apply
+      let rawTons = (sqFt / 550) * insulMultiplier * windowMultiplier;
+      
+      // HVAC units are sized in half-ton steps (2.0, 2.5, 3.0, 3.5, 4.0, 5.0)
+      let roundedTons = Math.round(rawTons * 2) / 2;
+      roundedTons = Math.max(1.5, Math.min(roundedTons, 5.0));
+
+      // Standard airflow is 400 CFM per ton
+      const targetCfm = roundedTons * 400;
+
+      calcTonsText.textContent = `${roundedTons.toFixed(1)} Tons`;
+      calcCfmText.textContent = `${targetCfm.toLocaleString()} CFM`;
+
+      sizingDescText.textContent = `A house size of ${sqFt.toLocaleString()} sq ft with selected wall R-values and window exposures requires a calibrated ${roundedTons.toFixed(1)} Ton cooling load.`;
+    }
+
+    sizeSlider.addEventListener('input', calculateTonnage);
+    insulationSelect.addEventListener('change', calculateTonnage);
+    windowsSelect.addEventListener('change', calculateTonnage);
+
+    calculateTonnage();
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "hvac-joplin-masterpiece",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/verify-site.mjs",
+    "build": "npm run check"
+  },
+  "devDependencies": {}
+}

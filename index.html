@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Breeze & Burn Systems — $20k high-end visual showpiece demonstrating thermodynamic climate intelligence, infrared simulation, and technical dispatch in Joplin, MO." />
+  <title>Breeze & Burn — Thermodynamic Systems Intelligence</title>
+  <link rel="stylesheet" href="./styles.css?v=3" />
+</head>
+<body>
+
+  <!-- FLOATING NAVIGATION RAIL -->
+  <header class="nav-container">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="#top" class="nav-brand" aria-label="Breeze and Burn home">
+        <div class="brand-icon" aria-hidden="true"></div>
+        <span>Breeze & Burn</span>
+      </a>
+      <div class="nav-menu" role="menubar">
+        <a href="#diagnostics" class="nav-link" role="menuitem">Diagnostics</a>
+        <a href="#simulator" class="nav-link" role="menuitem">Simulator</a>
+        <a href="#services" class="nav-link" role="menuitem">Services</a>
+        <a href="#areas" class="nav-link" role="menuitem">Coverage</a>
+        <a href="#book" class="nav-link" role="menuitem">Book Scan</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-status">
+          <div class="status-dot" aria-hidden="true"></div>
+          <span>SYSTEM ACTIVE</span>
+        </div>
+        <a href="#book" class="btn btn-primary" style="min-height: 38px; padding: 6px 16px; font-size: 11px; font-family: var(--font-mono); text-transform: uppercase;">Run Scan</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="badge-outline">
+            <span class="status-dot" style="background: var(--color-cold); box-shadow: 0 0 8px var(--color-cold);"></span>
+            <span>JOPLIN, MO · 30-MILE RADIUS</span>
+          </div>
+          <h1 class="hero-title">Comfort has an<br><em>engine.</em></h1>
+          <p class="hero-desc">We do not sell boxes or commodity repairs. We diagnose mechanical systems using thermal metrics, air balances, and static pressures to expose heat transfers before a technician arrives.</p>
+          <div class="hero-buttons">
+            <a href="#book" class="btn btn-primary">Schedule Diagnostic Scan</a>
+            <a href="#simulator" class="btn btn-secondary">Explore Simulator</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-val">417.624.9300</span>
+              <span class="metric-lbl">Demo Diagnostics Line</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-val">&lt; 1.4 Hr</span>
+              <span class="metric-lbl">Average Joplin Dispatch</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-val">100%</span>
+              <span class="metric-lbl">Telemetry Transparency</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STUNNING MASTERPIECE CARD -->
+        <aside class="diagnostic-portal" id="diagnostics" aria-label="Thermodynamic Airflow Diagnostics Portal">
+          <div class="portal-header">
+            <div class="portal-title-block">
+              <h2 class="portal-title">Thermal Flow Chamber</h2>
+              <span class="portal-subtitle">Interactive particle fluid mechanics simulation</span>
+            </div>
+            <div class="portal-selector" id="modeSelector">
+              <button class="portal-btn active" data-mode="cooling">Cooling</button>
+              <button class="portal-btn" data-mode="heating">Heating</button>
+              <button class="portal-btn" data-mode="iaq">Purification</button>
+            </div>
+          </div>
+          
+          <div class="canvas-wrapper">
+            <div class="canvas-overlay">
+              <div class="overlay-dot" id="canvasStatusDot"></div>
+              <span id="canvasStatusText">ACTIVE COOLING: 53.2°F</span>
+            </div>
+            <canvas class="interactive-canvas" id="thermoCanvas"></canvas>
+          </div>
+
+          <div class="portal-stats-grid">
+            <div class="stat-box">
+              <span class="stat-lbl">Plenum Velocity</span>
+              <span class="stat-val" id="portalVelocity">884 CFM</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-lbl">Thermal Load</span>
+              <span class="stat-val" id="portalLoad">-24,400 BTU/h</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-lbl">Sensor Delta-T</span>
+              <span class="stat-val" id="portalDelta">18.4°F</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SIMULATOR SECTION -->
+    <section class="section" id="simulator">
+      <div class="section-inner">
+        <div class="section-header-block">
+          <div class="section-eyebrow">Interactive Engine</div>
+          <h2 class="section-title">Thermodynamic Climate Simulator</h2>
+        </div>
+        <div class="simulator-panel">
+          <div class="sim-controls">
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span>Outdoor Ambient Temp</span>
+                <span id="ambientVal">95°F</span>
+              </div>
+              <input type="range" class="slider-input" id="ambientSlider" min="0" max="110" value="95">
+            </div>
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span>Filter Static Loading</span>
+                <span id="filterVal">Clean (0% restricted)</span>
+              </div>
+              <input type="range" class="slider-input" id="filterSlider" min="0" max="100" value="0">
+            </div>
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span>Duct Insulation Grade</span>
+                <span id="insulationVal">R-8 (High Quality)</span>
+              </div>
+              <input type="range" class="slider-input" id="insulationSlider" min="2" max="8" step="2" value="8">
+            </div>
+          </div>
+
+          <div class="sim-results">
+            <h3 class="results-header">Calculated Performance Metrics</h3>
+            <div class="sim-metrics-grid">
+              <div class="sim-metric-card">
+                <span class="stat-lbl">Supply Register Temp</span>
+                <span class="val" id="calcSupply" style="color: var(--color-cold);">52.4°F</span>
+              </div>
+              <div class="sim-metric-card">
+                <span class="stat-lbl">System Efficiency Drop</span>
+                <span class="val" id="calcEfficiency" style="color: var(--color-green);">0% Loss</span>
+              </div>
+            </div>
+            <div class="sim-diagnostic-status optimal" id="diagnosticStatus">
+              <span class="status-title" id="statusTitle">Optimal Operation</span>
+              <span class="status-desc" id="statusDesc">Airflow and pressure curves represent a well-balanced mechanical envelope.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE SERVICES DIRECTORY -->
+    <section class="section" id="services">
+      <div class="section-inner">
+        <div class="section-header-block">
+          <div class="section-eyebrow">Service Taxonomy</div>
+          <h2 class="section-title">Engineered Thermal Solvers</h2>
+        </div>
+        <div class="services-grid">
+          
+          <!-- COOLING -->
+          <article class="service-card">
+            <div class="service-img-container">
+              <img src="./images/cooling-condenser.png" alt="A premium outdoor central AC condenser glowing at twilight" />
+              <div class="service-img-overlay"></div>
+            </div>
+            <div class="service-body">
+              <span class="service-icon">01 / Cooling</span>
+              <h3 class="service-card-title">Air Conditioning & Cooling</h3>
+              <p class="service-card-desc">Advanced AC diagnosing, refrigerant flow metering, compressor optimization, and high-precision split-temperature balancing.</p>
+              <a href="./services/ac-repair.html" class="service-card-link">
+                <span>Review Cooling Metrics</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- HEATING -->
+          <article class="service-card">
+            <div class="service-img-container">
+              <img src="./images/heating-furnace.png" alt="Close-up of gas burner flames in a residential furnace" />
+              <div class="service-img-overlay"></div>
+            </div>
+            <div class="service-body">
+              <span class="service-icon">02 / Heating</span>
+              <h3 class="service-card-title">Heating & Combustion</h3>
+              <p class="service-card-desc">Safety inspections, heat exchanger integrity scans, combustion fuel-to-air tuning, and gas manifold flow optimization.</p>
+              <a href="./services/heating.html" class="service-card-link">
+                <span>Review Combustion Analytics</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- IAQ -->
+          <article class="service-card">
+            <div class="service-img-container">
+              <img src="./images/filter-install.png" alt="HVAC technician inserting a high-efficiency HEPA air filter" />
+              <div class="service-img-overlay"></div>
+            </div>
+            <div class="service-body">
+              <span class="service-icon">03 / IAQ</span>
+              <h3 class="service-card-title">Indoor Air Purification</h3>
+              <p class="service-card-desc">HEPA filtration layouts, relative humidity optimization, active UV-C pathogen neutralization, and dust load modeling.</p>
+              <a href="./services/iaq.html" class="service-card-link">
+                <span>Explore Filtration Parameters</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- INSTALLATION -->
+          <article class="service-card">
+            <div class="service-img-container">
+              <img src="./images/tech-diagnostic.png" alt="An HVAC technician configuring a modern central furnace system" />
+              <div class="service-img-overlay"></div>
+            </div>
+            <div class="service-body">
+              <span class="service-icon">04 / Replacement</span>
+              <h3 class="service-card-title">Precision Replacement</h3>
+              <p class="service-card-desc">Calculated structural heat-load profiles, customized duct sizing adjustments, and installation of premium high-efficiency units.</p>
+              <a href="./services/installation.html" class="service-card-link">
+                <span>Explore System Sizing</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- MAINTENANCE -->
+          <article class="service-card">
+            <div class="service-img-container">
+              <img src="./images/thermostat-smart.png" alt="A glowing smart wall thermostat controller" />
+              <div class="service-img-overlay"></div>
+            </div>
+            <div class="service-body">
+              <span class="service-icon">05 / Tuning</span>
+              <h3 class="service-card-title">System Tuning & Maintenance</h3>
+              <p class="service-card-desc">Annual checkups, mechanical electrical load assessments, cleaning of heat coils, blower lubrication, and flow balancing.</p>
+              <a href="./services/maintenance.html" class="service-card-link">
+                <span>View Maintenance Checklist</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- METHODOLOGY PATHWAY -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-header-block">
+          <div class="section-eyebrow">The Method</div>
+          <h2 class="section-title">The Scientific Commissioning Loop</h2>
+        </div>
+        <div class="method-timeline">
+          <div class="method-card">
+            <div class="method-step">01</div>
+            <h3 class="method-title">Expose & Scan</h3>
+            <p class="method-desc">We mount specialized manometer probes and thermal cameras to map energy leakage throughout the home's shell.</p>
+          </div>
+          <div class="method-card">
+            <div class="method-step">02</div>
+            <h3 class="method-title">Isolate Faults</h3>
+            <p class="method-desc">We cross-reference sensor diagnostics to identify specific thermal flow drops, leaky ducts, or restricted filters.</p>
+          </div>
+          <div class="method-card">
+            <div class="method-step">03</div>
+            <h3 class="method-title">Calibrated Repair</h3>
+            <p class="method-desc">We clean, repair, and adjust your mechanical systems, tracking the restoration against precise static curve targets.</p>
+          </div>
+          <div class="method-card">
+            <div class="method-step">04</div>
+            <h3 class="method-title">Verify & Seal</h3>
+            <p class="method-desc">We run a secondary flow scan post-repair, handing over a printed audit validating the restored system efficiency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MUNICIPAL SERVICE AREA RADAR MAP -->
+    <section class="section" id="areas">
+      <div class="section-inner">
+        <div class="section-header-block">
+          <div class="section-eyebrow">Local Coverage</div>
+          <h2 class="section-title">Joplin Area Dispatch Grid</h2>
+        </div>
+        <div class="map-layout">
+          <div class="interactive-map-panel" id="radarMapPanel">
+            <div class="radar-sweep"></div>
+            <div class="map-cities-overlay" id="mapCitiesOverlay">
+              <!-- Joplin (Center) -->
+              <div class="map-city-node active" data-city="joplin" style="top: 50%; left: 50%;">
+                <span class="city-label">Joplin (Hub)</span>
+              </div>
+              <!-- Webb City -->
+              <div class="map-city-node" data-city="webb-city" style="top: 42%; left: 51%;">
+                <span class="city-label">Webb City</span>
+              </div>
+              <!-- Carl Junction -->
+              <div class="map-city-node" data-city="carl-junction" style="top: 38%; left: 35%;">
+                <span class="city-label">Carl Junction</span>
+              </div>
+              <!-- Carthage -->
+              <div class="map-city-node" data-city="carthage" style="top: 35%; left: 74%;">
+                <span class="city-label">Carthage</span>
+              </div>
+              <!-- Neosho -->
+              <div class="map-city-node" data-city="neosho" style="top: 80%; left: 53%;">
+                <span class="city-label">Neosho</span>
+              </div>
+              <!-- Galena (KS) -->
+              <div class="map-city-node" data-city="galena" style="top: 52%; left: 28%;">
+                <span class="city-label">Galena, KS</span>
+              </div>
+              <!-- Baxter Springs (KS) -->
+              <div class="map-city-node" data-city="baxter" style="top: 68%; left: 20%;">
+                <span class="city-label">Baxter Springs, KS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="area-detail-card" id="areaDetailCard">
+            <h3 class="portal-title" id="areaDetailName" style="color: var(--color-cold); font-size: var(--text-lg); margin-bottom: 8px;">Joplin (Main Hub)</h3>
+            <p id="areaDetailDesc" style="color: var(--color-muted); font-size: var(--text-sm); line-height: 1.5; margin-bottom: 24px;">Servicing Joplin, MO and the immediate metropolitan area. Dispatch units are based here, delivering our fastest response times.</p>
+            <div class="area-stats">
+              <div class="stat-box">
+                <span class="stat-lbl">Dispatch Latency</span>
+                <span class="stat-val" id="areaStatLatency">&lt; 45 Mins</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-lbl">Demo Coverage Model</span>
+                <span class="stat-val" id="areaStatTeams">4 Crews</span>
+              </div>
+            </div>
+            <a href="./areas/joplin-mo.html" id="areaDetailLink" class="btn btn-secondary" style="margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+              <span>View City Report</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAGNOSTIC FORM FLOW -->
+    <section class="section" id="book">
+      <div class="section-inner">
+        <div class="contact-layout">
+          <div class="contact-info">
+            <div class="contact-header">
+              <h2>Request a Diagnostic Scan</h2>
+              <p style="color: var(--color-muted); font-size: var(--text-sm); line-height: 1.5;">Book an engineer to analyze your home. They will bring specialized thermal, pressure, and flow auditing equipment to compile a comprehensive diagnostics report.</p>
+            </div>
+            <div class="contact-meta">
+              <div class="meta-row">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                <div>
+                  <div class="meta-title">Local Phone Line</div>
+                  <div class="meta-val">417.624.9300</div>
+                </div>
+              </div>
+              <div class="meta-row">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <div>
+                  <div class="meta-title">Diagnostic Center</div>
+                  <div class="meta-val">comfort@breezeburnhvac.com</div>
+                </div>
+              </div>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--color-faint); line-height: 1.4;">
+              * Breeze & Burn is a premium showcase site. Contact numbers, names, and telemetry outputs are configured for demonstration purposes.
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <form id="diagnosticsSchedulerForm">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="clientName">Name</label>
+                  <input type="text" class="form-control" id="clientName" placeholder="Owner name" required />
+                </div>
+                <div class="form-group">
+                  <label for="clientPhone">Phone</label>
+                  <input type="tel" class="form-control" id="clientPhone" placeholder="(417) 555-0100" required />
+                </div>
+                <div class="form-group">
+                  <label for="clientCity">Your City</label>
+                  <select class="form-control" id="clientCity" style="color: var(--color-text); background-color: oklch(8% 0.015 246); appearance: auto; -webkit-appearance: auto;">
+                    <option value="joplin">Joplin, MO</option>
+                    <option value="webb-city">Webb City, MO</option>
+                    <option value="carl-junction">Carl Junction, MO</option>
+                    <option value="carthage">Carthage, MO</option>
+                    <option value="neosho">Neosho, MO</option>
+                    <option value="galena">Galena, KS</option>
+                    <option value="baxter-springs">Baxter Springs, KS</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="diagnoseType">Primary System Indicator</label>
+                  <select class="form-control" id="diagnoseType" style="color: var(--color-text); background-color: oklch(8% 0.015 246); appearance: auto; -webkit-appearance: auto;">
+                    <option value="cooling">No Cooling / Weak Airflow</option>
+                    <option value="heating">No Heating / Ignition Failure</option>
+                    <option value="iaq">Heavy Dust / Poor Indoor Air Quality</option>
+                    <option value="sizing">Complete System Replacement Audit</option>
+                    <option value="tuning">Seasonal Safety Check & Calibration</option>
+                  </select>
+                </div>
+                <div class="form-group full">
+                  <label for="clientSymptoms">Observed Symptoms / Sensor Telemetry</label>
+                  <textarea class="form-control" id="clientSymptoms" placeholder="Example: Upstairs registers blowing weak, system cycling frequently, return duct sounds whistling..."></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitFormBtn">Stage Diagnostic Dispatch Sequence</button>
+              <div id="formStatusMsg" style="margin-top: 14px; text-align: center; font-family: var(--font-mono); font-size: 11px; color: var(--color-green); display: none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand-section">
+          <div class="footer-logo">
+            <div class="brand-icon" aria-hidden="true" style="width: 24px; height: 24px; border-radius: 50%; background: conic-gradient(from 180deg, var(--color-cold), var(--color-heat), var(--color-iaq), var(--color-cold));"></div>
+            <span>Breeze & Burn Systems</span>
+          </div>
+          <p class="footer-desc">A visual masterpiece and technical showpiece for $20k premium HVAC design. Servicing Joplin, MO and a 30-mile multi-state service radius with thermal precision.</p>
+        </div>
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul class="footer-col-list">
+              <li><a href="./services/ac-repair.html">AC Repair</a></li>
+              <li><a href="./services/heating.html">Furnace Service</a></li>
+              <li><a href="./services/iaq.html">Air Filtration</a></li>
+              <li><a href="./services/installation.html">Precision Install</a></li>
+              <li><a href="./services/maintenance.html">Coil Tuning</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Municipalities</h4>
+            <ul class="footer-col-list">
+              <li><a href="./areas/joplin-mo.html">Joplin</a></li>
+              <li><a href="./areas/webb-city-mo.html">Webb City</a></li>
+              <li><a href="./areas/carl-junction-mo.html">Carl Junction</a></li>
+              <li><a href="./areas/carthage-mo.html">Carthage</a></li>
+              <li><a href="./areas/neosho-mo.html">Neosho</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Borders</h4>
+            <ul class="footer-col-list">
+              <li><a href="./areas/galena-ks.html">Galena, KS</a></li>
+              <li><a href="./areas/baxter-springs-ks.html">Baxter Springs</a></li>
+              <li><a href="./contact.html">Diagnostics Scheduler</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Breeze & Burn Systems. Configured as a high-end contractor design showcase.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Diagnostic Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC INTERACTION JAVASCRIPT -->
+  <script>
+    /* =========================================================
+       1. INTERACTIVE THERMODYNAMIC CANVAS ENGINE
+       ========================================================= */
+    const canvas = document.getElementById('thermoCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Canvas sizing setup
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Particle class representation
+    class Particle {
+      constructor(mode) {
+        this.reset(mode);
+      }
+
+      reset(mode) {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2.5 + 1;
+        
+        if (mode === 'cooling') {
+          this.vx = (Math.random() * 1.5 + 0.8); // Flows rightwards
+          this.vy = (Math.sin(this.x * 0.015) * 0.25);
+          this.color = `oklch(${72 + Math.random()*8}% 0.16 210 / ${Math.random()*0.5 + 0.25})`;
+        } else if (mode === 'heating') {
+          this.vx = (Math.random() * 0.8 - 0.4);
+          this.vy = -(Math.random() * 1.2 + 0.6); // Flows upwards (heat rises)
+          this.color = `oklch(${70 + Math.random()*6}% 0.18 42 / ${Math.random()*0.5 + 0.25})`;
+        } else { // IAQ
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.vx = (Math.random() * 0.4 - 0.2);
+          this.vy = -(Math.random() * 0.6 + 0.2); // Slow drift upward
+          this.color = `oklch(${74 + Math.random()*5}% 0.14 165 / ${Math.random()*0.4 + 0.2})`;
+        }
+      }
+
+      update(mode, mouseX, mouseY) {
+        // Move particle
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Interaction with mouse cursor
+        if (mouseX !== undefined && mouseY !== undefined) {
+          const dx = this.x - mouseX;
+          const dy = this.y - mouseY;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 80) {
+            const force = (80 - dist) / 80;
+            const angle = Math.atan2(dy, dx);
+            this.x += Math.cos(angle) * force * 5;
+            this.y += Math.sin(angle) * force * 5;
+          }
+        }
+
+        // Boundary reset conditions
+        if (mode === 'cooling') {
+          if (this.x > canvas.width) {
+            this.x = 0;
+            this.y = Math.random() * canvas.height;
+          }
+        } else if (mode === 'heating') {
+          if (this.y < 0) {
+            this.y = canvas.height;
+            this.x = Math.random() * canvas.width;
+          }
+        } else { // IAQ
+          if (this.y < 0) {
+            this.y = canvas.height;
+            this.x = Math.random() * canvas.width;
+          }
+        }
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.shadowBlur = this.size * 2;
+        ctx.shadowColor = this.color;
+        ctx.fill();
+        ctx.shadowBlur = 0; // reset
+      }
+    }
+
+    // Set up particles
+    const maxParticles = 68;
+    const particles = [];
+    let currentMode = 'cooling';
+
+    for (let i = 0; i < maxParticles; i++) {
+      particles.push(new Particle(currentMode));
+    }
+
+    // Mouse positions
+    let mouseX, mouseY;
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    });
+    canvas.addEventListener('mouseleave', () => {
+      mouseX = undefined;
+      mouseY = undefined;
+    });
+
+    // Animation Loop
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw grid outline inside canvas
+      ctx.strokeStyle = 'oklch(24% 0.03 246 / 0.16)';
+      ctx.lineWidth = 1;
+      const gridSize = 40;
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      for (let y = 0; y < canvas.height; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
+
+      // Update and draw particles
+      particles.forEach(p => {
+        p.update(currentMode, mouseX, mouseY);
+        p.draw();
+      });
+
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // Mode Selector Event Handling
+    const modeButtons = document.querySelectorAll('#modeSelector button');
+    const statusText = document.getElementById('canvasStatusText');
+    const statusDot = document.getElementById('canvasStatusDot');
+    const portalVel = document.getElementById('portalVelocity');
+    const portalLoad = document.getElementById('portalLoad');
+    const portalDelta = document.getElementById('portalDelta');
+
+    const modeMetaData = {
+      cooling: {
+        text: 'ACTIVE COOLING: 52.8°F',
+        color: 'var(--color-cold)',
+        velocity: '920 CFM',
+        load: '-26,200 BTU/h',
+        delta: '19.2°F'
+      },
+      heating: {
+        text: 'ACTIVE COMBUSTION: 114.6°F',
+        color: 'var(--color-heat)',
+        velocity: '1050 CFM',
+        load: '+44,800 BTU/h',
+        delta: '48.1°F'
+      },
+      iaq: {
+        text: 'AIR PURIFICATION ACTIVE',
+        color: 'var(--color-iaq)',
+        velocity: '820 CFM',
+        load: '0 BTU/h (Static)',
+        delta: '0.4°F (Balanced)'
+      }
+    };
+
+    modeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        currentMode = btn.dataset.mode;
+        
+        // Reset particles for new flow mode
+        particles.forEach(p => p.reset(currentMode));
+
+        // Update readouts
+        const data = modeMetaData[currentMode];
+        statusText.textContent = data.text;
+        statusDot.style.background = data.color;
+        statusDot.style.boxShadow = `0 0 10px ${data.color}`;
+        portalVel.textContent = data.velocity;
+        portalLoad.textContent = data.load;
+        portalDelta.textContent = data.delta;
+      });
+    });
+
+    /* =========================================================
+       2. REAL-TIME CLIMATE SIMULATOR
+       ========================================================= */
+    const ambientSlider = document.getElementById('ambientSlider');
+    const filterSlider = document.getElementById('filterSlider');
+    const insulationSlider = document.getElementById('insulationSlider');
+
+    const ambientVal = document.getElementById('ambientVal');
+    const filterVal = document.getElementById('filterVal');
+    const insulationVal = document.getElementById('insulationVal');
+
+    const calcSupply = document.getElementById('calcSupply');
+    const calcEfficiency = document.getElementById('calcEfficiency');
+    const diagnosticStatus = document.getElementById('diagnosticStatus');
+    const statusTitle = document.getElementById('statusTitle');
+    const statusDesc = document.getElementById('statusDesc');
+
+    function runSimulatorCalculation() {
+      const ambTemp = parseInt(ambientSlider.value);
+      const filterRestriction = parseInt(filterSlider.value);
+      const insulR = parseInt(insulationSlider.value);
+
+      ambientVal.textContent = `${ambTemp}°F`;
+      
+      let filterText = 'Clean (0%)';
+      if (filterRestriction > 70) {
+        filterText = `Clogged (${filterRestriction}% restricted)`;
+      } else if (filterRestriction > 30) {
+        filterText = `Moderate load (${filterRestriction}%)`;
+      } else if (filterRestriction > 0) {
+        filterText = `Partially loaded (${filterRestriction}%)`;
+      }
+      filterVal.textContent = filterText;
+
+      let insulText = `R-${insulR} (High Quality)`;
+      if (insulR === 2) {
+        insulText = `R-2 (Uninsulated Steel)`;
+      } else if (insulR === 4) {
+        insulText = `R-4 (Moderate Utility)`;
+      } else if (insulR === 6) {
+        insulText = `R-6 (Standard Quality)`;
+      }
+      insulationVal.textContent = insulText;
+
+      // Base cooling logic (Supply temp estimation)
+      // Standard target is 50-55 F
+      let baseSupply = 51.5;
+      
+      // Ambients over 90 degrade split
+      if (ambTemp > 90) {
+        baseSupply += (ambTemp - 90) * 0.2;
+      } else if (ambTemp < 70) {
+        baseSupply -= (70 - ambTemp) * 0.15;
+      }
+
+      // Clogged filter restricts flow, drops coil temperature (freezing danger!)
+      if (filterRestriction > 0) {
+        baseSupply -= (filterRestriction * 0.18);
+      }
+
+      // Weak insulation leaks heat into duct pathway
+      if (insulR < 8) {
+        const insulFactor = (8 - insulR) * 0.65;
+        baseSupply += insulFactor;
+      }
+
+      // Calculate efficiency degradation
+      let efficiencyLoss = 0;
+      if (filterRestriction > 20) {
+        efficiencyLoss += (filterRestriction - 20) * 0.35;
+      }
+      if (insulR < 8) {
+        efficiencyLoss += (8 - insulR) * 3.5;
+      }
+      if (ambTemp > 95) {
+        efficiencyLoss += (ambTemp - 95) * 0.8;
+      }
+      efficiencyLoss = Math.min(Math.round(efficiencyLoss), 90);
+
+      // Render readings
+      calcSupply.textContent = `${baseSupply.toFixed(1)}°F`;
+      
+      if (efficiencyLoss === 0) {
+        calcEfficiency.textContent = '0% Efficiency Loss';
+        calcEfficiency.style.color = 'var(--color-green)';
+      } else {
+        calcEfficiency.textContent = `-${efficiencyLoss}% Efficiency Loss`;
+        calcEfficiency.style.color = efficiencyLoss > 30 ? 'var(--color-heat)' : 'var(--color-amber)';
+      }
+
+      // Calculate Diagnostics Banner state
+      diagnosticStatus.className = 'sim-diagnostic-status'; // reset
+      if (baseSupply < 35) {
+        diagnosticStatus.classList.add('alert');
+        statusTitle.textContent = 'Coil Freeze Warning';
+        statusDesc.textContent = 'Extremely restricted airflow is dropping temperatures below freezing. System shutdown recommended to prevent compressor failure.';
+      } else if (efficiencyLoss > 25 || baseSupply > 60) {
+        diagnosticStatus.classList.add('warning');
+        statusTitle.textContent = 'Degraded Efficiency Alert';
+        statusDesc.textContent = 'Leaky ductwork insulation or static load imbalances are driving up running cycles and utility costs.';
+      } else {
+        diagnosticStatus.classList.add('optimal');
+        statusTitle.textContent = 'System Optimal';
+        statusDesc.textContent = 'Supply temperatures and electrical power curves match recommended mechanical system design parameters.';
+      }
+    }
+
+    [ambientSlider, filterSlider, insulationSlider].forEach(slider => {
+      slider.addEventListener('input', runSimulatorCalculation);
+    });
+    // Init calculation
+    runSimulatorCalculation();
+
+    /* =========================================================
+       3. INTERACTIVE MUNICIPAL COVERAGE MAP
+       ========================================================= */
+    const cityNodes = document.querySelectorAll('.map-city-node');
+    const areaDetailName = document.getElementById('areaDetailName');
+    const areaDetailDesc = document.getElementById('areaDetailDesc');
+    const areaStatLatency = document.getElementById('areaStatLatency');
+    const areaStatTeams = document.getElementById('areaStatTeams');
+    const areaDetailLink = document.getElementById('areaDetailLink');
+
+    const cityDetails = {
+      joplin: {
+        name: 'Joplin (Main Hub)',
+        desc: 'Our primary technical diagnostic office and warehouse is based in Joplin, positioned as a demo hub for rapid-dispatch style website messaging across the metro area.',
+        latency: 'Demo Hub',
+        teams: 'Sample Zone',
+        link: './areas/joplin-mo.html'
+      },
+      'webb-city': {
+        name: 'Webb City Coverage Area',
+        desc: 'Servicing Webb City residents just north of Joplin. Technicians cycle through this corridor daily, ensuring swift local scheduling.',
+        latency: 'Demo Area',
+        teams: 'Sample Zone',
+        link: './areas/webb-city-mo.html'
+      },
+      'carl-junction': {
+        name: 'Carl Junction Region',
+        desc: 'Full residential support throughout Carl Junction. We regularly perform structural load assessments and thermal zoning calibrations here.',
+        latency: '< 50 Mins',
+        teams: 'Sample Zone',
+        link: './areas/carl-junction-mo.html'
+      },
+      carthage: {
+        name: 'Historic Carthage Hub',
+        desc: 'Serving Carthage with high-efficiency furnace repairs and precision replacements. Expert diagnostic service within a short drive.',
+        latency: 'Demo Area',
+        teams: 'Sample Zone',
+        link: './areas/carthage-mo.html'
+      },
+      neosho: {
+        name: 'Neosho Dispatch Zone',
+        desc: 'Southern service radius extending to Neosho. Specialized duct seal testing and attic R-value upgrades are common requests here.',
+        latency: 'Demo Area',
+        teams: 'Sample Zone',
+        link: './areas/neosho-mo.html'
+      },
+      galena: {
+        name: 'Galena, KS Services',
+        desc: 'Cross-border demo service-area page for historic Galena, Kansas, showing how diagnostic HVAC copy could be structured.',
+        latency: 'Demo Area',
+        teams: 'Sample Zone',
+        link: './areas/galena-ks.html'
+      },
+      baxter: {
+        name: 'Baxter Springs, KS Area',
+        desc: 'Extending westward to Baxter Springs. Our technicians provide combustion analytics and air handler tunings along the local route.',
+        latency: 'Demo Area',
+        teams: 'Sample Zone',
+        link: './areas/baxter-springs-ks.html'
+      }
+    };
+
+    cityNodes.forEach(node => {
+      node.addEventListener('click', () => {
+        cityNodes.forEach(n => n.classList.remove('active'));
+        node.classList.add('active');
+
+        const city = node.dataset.city;
+        const details = cityDetails[city];
+
+        areaDetailName.textContent = details.name;
+        areaDetailDesc.textContent = details.desc;
+        areaStatLatency.textContent = details.latency;
+        areaStatTeams.textContent = details.teams;
+        areaDetailLink.setAttribute('href', details.link);
+      });
+    });
+
+    /* =========================================================
+       4. MOBILE NAVBAR TOGGLE
+       ========================================================= */
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMenu.style.display === 'flex';
+      if (isOpen) {
+        navMenu.style.display = '';
+        navToggle.style.color = '';
+      } else {
+        navMenu.style.display = 'flex';
+        navMenu.style.flexDirection = 'column';
+        navMenu.style.position = 'absolute';
+        navMenu.style.top = '100%';
+        navMenu.style.left = '0';
+        navMenu.style.right = '0';
+        navMenu.style.marginTop = '8px';
+        navMenu.style.borderRadius = 'var(--radius-lg)';
+        navMenu.style.background = 'oklch(14% 0.02 246 / 0.96)';
+        navMenu.style.border = '1px solid var(--color-border)';
+        navMenu.style.padding = '12px';
+        navToggle.style.color = 'var(--color-cold)';
+      }
+    });
+
+    // Handle form submit simulation
+    document.getElementById('diagnosticsSchedulerForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const clientName = document.getElementById('clientName').value;
+      const statusMsg = document.getElementById('formStatusMsg');
+      const submitBtn = document.getElementById('submitFormBtn');
+
+      submitBtn.textContent = 'Transmitting Telemetry...';
+      submitBtn.style.opacity = '0.75';
+
+      setTimeout(() => {
+        submitBtn.textContent = 'Sequence Staged ✓';
+        submitBtn.style.opacity = '1';
+        statusMsg.textContent = `Diagnostic handshake complete, ${clientName}. Dispatch sequence staged locally. (Mock form)`;
+        statusMsg.style.display = 'block';
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

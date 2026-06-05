@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book an HVAC diagnostics scan and service appointment with Breeze & Burn in Joplin, MO." />
+  <title>Book Scan — Breeze & Burn</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Add any contact specific styles */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 60px 0;
+    }
+    .contact-form {
+      background: var(--color-bg-alt);
+      padding: 40px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-label {
+      display: block;
+      color: var(--color-muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .form-input {
+      width: 100%;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      padding: 12px;
+      color: var(--color-fg);
+      font-family: var(--font-sans);
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+    .sensor-handoff {
+      background: oklch(100% 0 0 / 0.02);
+      border: 1px solid var(--color-border);
+      padding: 40px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    @media (max-width: 800px) {
+      .contact-wrapper { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav-container">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon"></div>
+        <span>Breeze & Burn</span>
+      </a>
+      <div class="nav-menu">
+        <a href="index.html#diagnostics" class="nav-link">Diagnostics</a>
+        <a href="index.html#simulator" class="nav-link">Simulator</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#areas" class="nav-link">Coverage</a>
+        <a href="contact.html" class="nav-link active">Book Scan</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-status">
+          <div class="status-dot"></div>
+          <span>LOCALIZED AREA DISPATCH</span>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="min-height: 38px; padding: 6px 16px; font-size: 11px; font-family: var(--font-mono); text-transform: uppercase;">Run Scan</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <header class="page-header-hero" style="background: linear-gradient(180deg, var(--color-bg-alt), var(--color-bg));">
+      <div class="page-header-inner">
+        <div class="badge-outline">
+          <span class="status-dot" style="background: var(--color-green); box-shadow: 0 0 8px var(--color-green);"></span>
+          <span>DISPATCH ONLINE</span>
+        </div>
+        <h1 class="page-header-title">Diagnostic Sensor Handoff</h1>
+        <p class="page-header-desc">Input your location and system symptoms below. Our automated dispatch will assign a specialized field unit to your location within our 30-mile coverage radius.</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-inner contact-wrapper">
+        
+        <div class="contact-form">
+          <h2 class="portal-title" style="font-size: var(--text-lg); margin-bottom: 24px;">Initialize Dispatch Protocol</h2>
+          <form onsubmit="event.preventDefault(); alert('Simulated dispatch initialized. Field unit assigned.');">
+            <div class="form-group">
+              <label class="form-label">Property Address</label>
+              <input type="text" class="form-input" placeholder="e.g. 123 Main St, Joplin, MO" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">System Anomaly (Symptoms)</label>
+              <select class="form-input" required>
+                <option value="">Select Primary Anomaly</option>
+                <option value="no-cooling">No Cooling / Warm Air</option>
+                <option value="no-heating">No Heating / Cold Air</option>
+                <option value="weak-airflow">Weak Airflow / Static Drop</option>
+                <option value="noise">Strange Noises / Grinding</option>
+                <option value="leak">Water Leak / Frost on Coils</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Contact Relay</label>
+              <input type="text" class="form-input" placeholder="Phone or Email" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Priority Level</label>
+              <select class="form-input" required>
+                <option value="standard">Standard Scan (24-48 Hrs)</option>
+                <option value="urgent">Urgent Thermal Fault (Under 4 Hrs)</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Transmit Coordinates</button>
+          </form>
+        </div>
+
+        <div class="sensor-handoff">
+          <h2 class="portal-title" style="font-size: var(--text-lg); border-bottom: 1px solid var(--color-border); padding-bottom: 16px;">Active Dispatch Grid</h2>
+          
+          <div class="portal-stats-grid" style="grid-template-columns: 1fr; gap: 16px;">
+            <div class="stat-box">
+              <span class="stat-lbl">Primary Hub</span>
+              <span class="stat-val">Joplin, MO</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-lbl">Operating Radius</span>
+              <span class="stat-val">30 Miles</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-lbl">Dispatch Latency</span>
+              <span class="stat-val" style="color: var(--color-green);">Demo Area</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-lbl">Demo Intake Line</span>
+              <span class="stat-val">Demo placeholder</span>
+            </div>
+          </div>
+          
+          <p style="color: var(--color-muted); font-size: var(--text-sm); line-height: 1.6;">
+            This static demo does not transmit, route, dispatch, or schedule real service. The form is a visual estimate-prep concept for collecting HVAC diagnostic context.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Breeze & Burn Systems. Technical contractor design concept.</span>
+        <div class="footer-legal">
+          <a href="index.html">Back to Homepage</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
